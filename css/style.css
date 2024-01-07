@@ -112,7 +112,7 @@ a.nav-link {
   border-radius: 7px;
 }
 
-.cost-span {
+.model-span {
   text-align: end;
   width: 70%;
 }
@@ -218,7 +218,7 @@ a.nav-link {
     flex-direction: column;
   }
 
-  .cost-span {
+  .model-span {
     text-align: start;
   }
 
