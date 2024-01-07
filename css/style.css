@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(#040404c7, whitesmoke);
+}
+
+h1 {
+  color: #fff;
+  font-size: 3rem;
+  padding: 1rem 1.5rem;
+  margin: 0rem 1.5rem;
+}
+
+li {
+  list-style: none;
+  margin: 0.7rem 0 0.7rem 1.5rem;
+}
+
+li a {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.3rem 1rem;
+}
+
+li a:hover {
+  color: #bcadae;
+  text-decoration: underline;
+}
+
+/* begin van header */
+
+.header-box {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 350px 350px 350px 350px;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+a.nav-link {
+  color: #bcadae;
+  border-radius: 19px;
+  padding: 1rem 3rem;
+}
+
+.nav-li {
+  transition: transform 0.2s;
+}
+
+.nav-li:hover {
+  transform: scale(1.1);
+}
+
+.divider-box {
+  height: 10px;
+  background-color: #a61f1fd9;
+}
+
+.header-title-box {
+  background-image: url(../assets/mercedes-front.png);
+  background-size: 100% 100%;
+  display: flex;
+  text-align: left;
+  vertical-align: bottom;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50rem;
+  width: 100%;
+  position: relative;
+}
+
+.h1-title {
+  background-color: #9c6b6b00;
+  border-radius: 19px;
+  position: absolute;
+  bottom: 10%;
+  left: 1%;
+}
+
+/* eind van header */
+
+/*begin van main*/
+
+.card-box {
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23%;
+  justify-content: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+.sec-col {
+  background-color: whitesmoke;
+  max-width: 800px;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.card-car {
+  width: 100%;
+  height: 200px;
+  border-radius: 7px;
+}
+
+.cost-span {
+  text-align: end;
+  width: 70%;
+}
+
+.card-p {
+  margin-top: 1rem;
+  margin-left: 0rem;
+}
+
+.card-details {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 2rem;
+}
+
+.active {
+  color: #a71115 !important;
+  text-decoration: underline;
+}
+
+/* eind van main */
+
+/*begin van footer*/
+
+.footer-box {
+  background-color: rgba(157, 168, 152, 0.57);
+  display: grid;
+  grid-template-columns: 65% 4% 4% 7% 4%;
+  justify-content: left;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.footer-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  margin-top: 0.5rem;
+}
+
+.youtube-img {
+  width: 70px;
+  height: 30px;
+  border-radius: 7px;
+  margin-top: 0.5rem;
+}
+
+/* eind van footer */
+
+@media screen and (max-width: 1600px) {
+  .header-box {
+    grid-template-columns: 250px 250px 250px 250px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .header-box {
+    grid-template-columns: 200px 200px 200px 200px;
+  }
+
+  .card-box {
+    grid-template-columns: 30% 30% 30%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .header-box {
+    grid-template-columns: 160px 160px 160px 160px;
+  }
+
+  a.nav-link {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .header-box {
+    grid-template-columns: 280px 280px;
+    padding: 0px 59%;
+  }
+
+  .footer-box {
+    grid-template-columns: 55% 6% 6% 8% 6%;
+  }
+
+  .card-box {
+    grid-template-columns: 40% 40%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header-box {
+    grid-template-columns: 280px;
+  }
+
+  .card-details {
+    grid-template-columns: 90%;
+    gap: 0rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .cost-span {
+    text-align: start;
+  }
+
+  .footer-box {
+    grid-template-columns: 40% 8% 8% 9% 8%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card-box {
+    grid-template-columns: 100%;
+  }
+}
