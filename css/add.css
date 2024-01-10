@@ -30,18 +30,18 @@ li a:hover {
 /* begin van header */
 .header-box {
   background-color: #85b6cf;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid #b80e0e;
   display: grid;
-  grid-template-columns: 350px 350px 350px 350px;
+  grid-template-columns: 280px 280px;
+  padding: 0px 59%;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem;
 }
 
 a.nav-link {
-  color: black;
+  color: rgb(134, 18, 18);
   border-radius: 19px;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
 }
 
 .nav-li {
@@ -56,7 +56,6 @@ a.nav-link {
   color: black !important;
   text-decoration: underline;
 }
-
 /* eind van header */
 
 /*begin van main*/
@@ -102,7 +101,6 @@ form select {
   background-color: aqua;
   color: white;
 }
-
 /* eind van main */
 
 /* begin van footer*/
@@ -133,37 +131,15 @@ form select {
   border-radius: 7px;
   margin-top: 0.5rem;
 }
-
 /* eind van footer */
 
-@media screen and (max-width: 1600px) {
-  .header-box {
-    grid-template-columns: 250px 250px 250px 250px;
-  }
-}
-
-@media screen and (max-width: 1150px) {
-  .header-box {
-    grid-template-columns: 200px 200px 200px 200px;
-  }
-}
-
 @media screen and (max-width: 1000px) {
-  .header-box {
-    grid-template-columns: 160px 160px 160px 160px;
-  }
-
   a.nav-link {
     padding: 0.5rem 1rem;
   }
 }
 
 @media screen and (max-width: 960px) {
-  .header-box {
-    grid-template-columns: 280px 280px;
-    padding: 0px 59%;
-  }
-
   .footer-box {
     grid-template-columns: 55% 6% 6% 8% 6%;
   }
@@ -172,11 +148,6 @@ form select {
 @media screen and (max-width: 650px) {
   .header-box {
     grid-template-columns: 280px;
-  }
-
-  .card-details {
-    grid-template-columns: 90%;
-    gap: 0rem;
   }
 
   nav ul {

@@ -1,6 +1,9 @@
 const listMain = document.querySelector("#main-list");
 const listWarning = document.querySelector(".list-warning");
 const checkBoxElements = document.querySelectorAll(".checkbox");
+const totalBox = document.querySelector(".total");
+const filteredBox = document.querySelector(".filtered");
+
 let allCategories = ["auto", "suv"];
 // Add car section
 const createCarSection = (car) => {
@@ -20,7 +23,7 @@ const createCarSection = (car) => {
   //   <button class="removeButton" id="2">
   //     X
   //   </button>
-  // </section>;
+  // </section>
 
   const sectionElement = document.createElement("section");
   sectionElement.setAttribute("class", "sec-col");
@@ -41,7 +44,11 @@ const createCarSection = (car) => {
   div1.appendChild(div2);
   const pElement = document.createElement("p");
   const buttonElement = document.createElement("button");
-  buttonElement.setAttribute("class", "removeButton");
+  if (car.category === "suv") {
+    buttonElement.setAttribute("class", "removeButton suv");
+  } else {
+    buttonElement.setAttribute("class", "removeButton");
+  }
   buttonElement.setAttribute("id", car.id);
   buttonElement.appendChild(document.createTextNode("X"));
   buttonElement.addEventListener("click", (e) => removeButton(e));
@@ -65,6 +72,11 @@ function removeButton(e) {
         (item) => item.id !== Number(e.target.id)
       );
       localStorage.setItem("carList", JSON.stringify(newArray));
+      totalBox.textContent = newArray.length;
+      const tempFilteredCars = newArray.filter((car) =>
+        allCategories.includes(car.category)
+      );
+      filteredBox.textContent = tempFilteredCars.length;
     }
   }
 }
@@ -77,6 +89,8 @@ if (tempLocalData) {
     createCarSection(cars[index]);
   }
   listWarning.textContent = "";
+  totalBox.textContent = cars.length;
+  filteredBox.textContent = cars.length;
 } else {
   listWarning.textContent = "Please add a new car!";
 }
@@ -107,5 +121,7 @@ if (tempLocalData) {
 
     // Send data to html
     filteredCars.map((fCar) => createCarSection(fCar));
+
+    filteredBox.textContent = filteredCars.length;
   });
 });

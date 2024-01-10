@@ -10,7 +10,7 @@ const addCar = (car) => {
   let tempLocalData = localStorage.getItem("carList");
   if (tempLocalData) {
     tempLocalData = JSON.parse(tempLocalData);
-    car.id = tempLocalData.length;
+    car.id = new Date().getUTCMilliseconds();
     tempLocalData = [...tempLocalData, car];
     localStorage.setItem("carList", JSON.stringify(tempLocalData));
   } else {
