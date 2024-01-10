@@ -1,104 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auto</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      rel="noopener"
-      target="_blank"
-      href="./assets/favicon.png"
-    />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul class="header-box">
-          <li class="nav-li">
-            <a href="./index.html" class="nav-link active">Car List</a>
-          </li>
-          <li class="nav-li">
-            <a href="add.html" class="nav-link">Add Car</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main id="main-list" class="card-box">
-      <section class="sec-col">
-        <div>
-          <div class="card-details">
-            <span><b>Ford Focus</b></span>
-            <span class="model-span"><b>1998</b></span>
-          </div>
-        </div>
-        <p class="card-p">Auto</p>
-      </section>
-      <section class="sec-col">
-        <div>
-          <div class="card-details">
-            <span><b>Volvo V40</b></span>
-            <span class="model-span"><b>2000</b></span>
-          </div>
-        </div>
-        <p class="card-p">SUV</p>
-      </section>
-    </main>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto</title>
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <link rel="icon" type="image/x-icon" rel="noopener" target="_blank" href="./assets/favicon.png" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="header-box">
+        <li class="nav-li">
+          <a href="./index.html" class="nav-link active">Car List</a>
+        </li>
+        <li class="nav-li">
+          <a href="add.html" class="nav-link">Add Car</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="filter-section">
+    <input type="checkbox" id="auto" class="checkbox" checked name="auto" value="Auto" />
+    <label for="auto">Auto</label>
+    <input type="checkbox" id="SUV" class="checkbox" checked name="suv" value="SUV" />
+    <label for="SUV">Suv</label>
+  </section>
+  <main id="main-list" class="card-box"></main>
+  <div class="warning-container">
+    <p class="list-warning"></p>
+  </div>
+  <footer class="footer-box">
     <div>
-      <p class="list-warning"></p>
+      <p>Tel: +32 01 01 31 31</p>
+      <p>abdulkadirankit@gmail.com</p>
     </div>
-    <footer class="footer-box">
-      <div>
-        <p>Tel: +32 01 01 31 31</p>
-        <p>abdulkadirankit@gmail.com</p>
-      </div>
-      <div>
-        <a href="https://www.2dehands.be/" target="_blank">
-          <img
-            class="footer-img"
-            src="./assets/iconTweedeHands.png"
-            alt="tweede-hands"
-            loading="lazy"
-          />
-        </a>
-      </div>
-      <div>
-        <a
-          href="https://www.facebook.com/marketplace/learn-more/buying/vehicles/how-to-buy-a-car/"
-          target="_blank"
-        >
-          <img
-            class="footer-img"
-            src="./assets/icon-facebook.png"
-            alt="facebook"
-            loading="lazy"
-          />
-        </a>
-      </div>
-      <div>
-        <a href="https://www.youtube.com/watch?v=uHRGYOC8em4" target="_blank">
-          <img
-            class="youtube-img"
-            src="./assets/icon-youtube.png"
-            alt="youtube"
-            loading="lazy"
-          />
-        </a>
-      </div>
-      <div>
-        <a href="https://twitter.com/cars?lang=en" target="_blank">
-          <img
-            class="footer-img"
-            src="./assets/icon-x.png"
-            alt="X"
-            loading="lazy"
-          />
-        </a>
-      </div>
-    </footer>
-    <script type="text/javascript" src="list.js"></script>
-  </body>
+    <div class="footer-icons">
+      <a href="https://www.2dehands.be/" target="_blank">
+        <img class="footer-img" src="./assets/iconTweedeHands.png" alt="tweede-hands" />
+      </a>
+    </div>
+    <div class="footer-icons"> <a
+        href="https://www.facebook.com/marketplace/learn-more/buying/vehicles/how-to-buy-a-car/" target="_blank">
+        <img class="footer-img" src="./assets/icon-facebook.png" alt="facebook" />
+      </a>
+    </div>
+    <div class="footer-icons"> <a href="https://www.youtube.com/watch?v=uHRGYOC8em4" target="_blank">
+        <img class="youtube-img" src="./assets/icon-youtube.png" alt="youtube" />
+      </a>
+    </div>
+    <div class="footer-icons"> <a href="https://twitter.com/cars?lang=en" target="_blank">
+        <img class="footer-img" src="./assets/icon-x.png" alt="X" />
+      </a>
+    </div>
+  </footer>
+  <script type="text/javascript" src="list.js"></script>
+</body>
+
 </html>

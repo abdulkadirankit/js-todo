@@ -10,11 +10,12 @@ const addCar = (car) => {
   let tempLocalData = localStorage.getItem("carList");
   if (tempLocalData) {
     tempLocalData = JSON.parse(tempLocalData);
+    car.id = tempLocalData.length;
     tempLocalData = [...tempLocalData, car];
     localStorage.setItem("carList", JSON.stringify(tempLocalData));
   } else {
-    let tempArray = [car];
-    localStorage.setItem("carList", JSON.stringify(tempArray));
+    car.id = 0;
+    localStorage.setItem("carList", JSON.stringify([car]));
   }
   carWarning.textContent = car.name + " saved.";
 };
@@ -61,8 +62,7 @@ const randomCar = (car) => {
     tempLocalData = [...tempLocalData, car];
     localStorage.setItem("carList", JSON.stringify(tempLocalData));
   } else {
-    let tempArray = [car];
-    localStorage.setItem("carList", JSON.stringify(tempArray));
+    localStorage.setItem("carList", JSON.stringify([car]));
   }
   carWarning.textContent = car.name + " saved.";
 };
@@ -76,8 +76,8 @@ carRandom.addEventListener("click", (e) => {
 
 // Hover mouse event
 carRandom.addEventListener("mouseover", (e) => {
-  carWarning.textContent = "Car will be add as a randomly.";  
+  carWarning.textContent = "Car will be add as a randomly.";
 });
 carRandom.addEventListener("mouseout", (e) => {
-  carWarning.textContent = "";  
+  carWarning.textContent = "";
 });

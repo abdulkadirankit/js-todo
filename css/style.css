@@ -5,14 +5,18 @@
 }
 
 body {
-  background-image: linear-gradient(#040404c7, whitesmoke);
+  min-height: 100vh;
+  background-image: linear-gradient(#896b6b, whitesmoke);
 }
 
-h1 {
-  color: #fff;
-  font-size: 3rem;
-  padding: 1rem 1.5rem;
-  margin: 0rem 1.5rem;
+/* begin van header */
+.header-box {
+  background-color: #3e1010e6;
+  display: grid;
+  grid-template-columns: 350px 350px 350px 350px;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 li {
@@ -29,23 +33,12 @@ li a {
 }
 
 li a:hover {
-  color: #bcadae;
+  color: black;
   text-decoration: underline;
 }
 
-/* begin van header */
-
-.header-box {
-  background-color: black;
-  display: grid;
-  grid-template-columns: 350px 350px 350px 350px;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
-}
-
 a.nav-link {
-  color: #bcadae;
+  color: whitesmoke;
   border-radius: 19px;
   padding: 1rem 3rem;
 }
@@ -58,38 +51,13 @@ a.nav-link {
   transform: scale(1.1);
 }
 
-.divider-box {
-  height: 10px;
-  background-color: #a61f1fd9;
+.active {
+  color: black !important;
+  text-decoration: underline;
 }
-
-.header-title-box {
-  background-image: url(../assets/mercedes-front.png);
-  background-size: 100% 100%;
-  display: flex;
-  text-align: left;
-  vertical-align: bottom;
-  gap: 2rem;
-  margin-bottom: 1rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 50rem;
-  width: 100%;
-  position: relative;
-}
-
-.h1-title {
-  background-color: #9c6b6b00;
-  border-radius: 19px;
-  position: absolute;
-  bottom: 10%;
-  left: 1%;
-}
-
 /* eind van header */
 
 /*begin van main*/
-
 .card-box {
   display: grid;
   grid-template-columns: 23% 23% 23% 23%;
@@ -104,15 +72,38 @@ a.nav-link {
   max-width: 800px;
   padding: 0.5rem;
   border-radius: 6px;
+  position: relative;
 }
 
-.card-car {
-  width: 100%;
-  height: 200px;
-  border-radius: 7px;
+.filter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
 }
 
-.model-span {
+.filter-section label {
+  margin-right: 10px;
+}
+
+.filter-section input {
+  margin-right: 5px;
+}
+
+.removeButton {
+  cursor: pointer;
+  padding: 5px;
+  background-color: #a71115;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+}
+
+.year-span {
   text-align: end;
   width: 70%;
 }
@@ -120,6 +111,8 @@ a.nav-link {
 .card-p {
   margin-top: 1rem;
   margin-left: 0rem;
+  min-height: 40px;
+  text-transform: capitalize;
 }
 
 .card-details {
@@ -127,24 +120,29 @@ a.nav-link {
   grid-template-columns: 50% 50%;
   gap: 2rem;
 }
-
-.active {
-  color: #a71115 !important;
-  text-decoration: underline;
+.card-details b {
+  text-transform: uppercase;
 }
 
+.warning-container {
+  display: flex;
+  justify-content: center;
+}
 /* eind van main */
 
 /*begin van footer*/
-
 .footer-box {
-  background-color: rgba(157, 168, 152, 0.57);
+  background-color: whitesmoke;
   display: grid;
   grid-template-columns: 65% 4% 4% 7% 4%;
   justify-content: left;
   gap: 2rem;
   margin-bottom: 0.5rem;
   padding: 1rem 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  min-width: 100vw;
 }
 
 .footer-img {
@@ -160,7 +158,6 @@ a.nav-link {
   border-radius: 7px;
   margin-top: 0.5rem;
 }
-
 /* eind van footer */
 
 @media screen and (max-width: 1600px) {
@@ -218,7 +215,7 @@ a.nav-link {
     flex-direction: column;
   }
 
-  .model-span {
+  .year-span {
     text-align: start;
   }
 
@@ -230,5 +227,12 @@ a.nav-link {
 @media screen and (max-width: 550px) {
   .card-box {
     grid-template-columns: 100%;
+  }
+  .footer-box {
+    grid-template-columns: 70%;
+    padding-left: 15%;
+  }
+  .footer-icons {
+    display: none;
   }
 }
