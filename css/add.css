@@ -31,9 +31,7 @@ li a:hover {
 .header-box {
   background-color: #85b6cf;
   border-bottom: 1px solid #b80e0e;
-  display: grid;
-  grid-template-columns: 280px 280px;
-  padding: 0px 59%;
+  display: flex;
   justify-content: center;
   gap: 2rem;
 }
@@ -99,7 +97,7 @@ form select {
   border: none;
   outline: none;
   background-color: aqua;
-  color: white;
+  color: black;
 }
 /* eind van main */
 
@@ -147,11 +145,12 @@ form select {
 
 @media screen and (max-width: 650px) {
   .header-box {
-    grid-template-columns: 280px;
+    gap: 0rem;
   }
 
   nav ul {
     flex-direction: column;
+    align-items: center;
   }
 
   .footer-box {

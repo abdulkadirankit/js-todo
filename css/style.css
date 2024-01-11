@@ -31,9 +31,7 @@ li a:hover {
 .header-box {
   background-color: #85b6cf;
   border-bottom: 1px solid #b80e0e;
-  display: grid;
-  grid-template-columns: 280px 280px;
-  padding: 0px 59%;
+  display: flex;
   justify-content: center;
   gap: 2rem;
 }
@@ -85,7 +83,7 @@ a.nav-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100px;
+  min-height: 50px;
 }
 
 .filter-section label {
@@ -145,6 +143,10 @@ a.nav-link {
   display: flex;
   justify-content: center;
 }
+
+.footer-space{
+  height: 150px;
+}
 /* eind van main */
 
 /*begin van footer*/
@@ -201,7 +203,7 @@ a.nav-link {
 
 @media screen and (max-width: 650px) {
   .header-box {
-    grid-template-columns: 280px;
+    gap: 0rem;
   }
 
   .card-details {
@@ -211,6 +213,7 @@ a.nav-link {
 
   nav ul {
     flex-direction: column;
+    align-items: center;
   }
 
   .year-span {
