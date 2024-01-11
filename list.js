@@ -3,6 +3,16 @@ const listWarning = document.querySelector(".list-warning");
 const checkBoxElements = document.querySelectorAll(".checkbox");
 const totalBox = document.querySelector(".total");
 const filteredBox = document.querySelector(".filtered");
+const searchBox = document.querySelector(".search-element");
+
+let cars = [];
+let filteredCars = [];
+
+let tempData = localStorage.getItem("carList");
+if (tempData) {
+  cars = JSON.parse(tempData);
+  filteredCars = cars;
+}
 
 let allCategories = ["auto", "suv"];
 // Add car section
@@ -67,24 +77,17 @@ function removeButton(e) {
     const closestElement = e.target.closest(".sec-col");
     if (closestElement) {
       closestElement.remove();
-      const tempLocalData = JSON.parse(localStorage.getItem("carList"));
-      let newArray = tempLocalData.filter(
-        (item) => item.id !== Number(e.target.id)
-      );
-      localStorage.setItem("carList", JSON.stringify(newArray));
-      totalBox.textContent = newArray.length;
-      const tempFilteredCars = newArray.filter((car) =>
-        allCategories.includes(car.category)
-      );
-      filteredBox.textContent = tempFilteredCars.length;
+      cars = cars.filter((item) => item.id !== Number(e.target.id));
+      localStorage.setItem("carList", JSON.stringify(cars));
+      totalBox.textContent = cars.length;
+      filteredCars = cars.filter((car) => allCategories.includes(car.category));
+      filteredBox.textContent = filteredCars.length;
     }
   }
 }
 
 // List all cars
-const tempLocalData = localStorage.getItem("carList");
-if (tempLocalData) {
-  const cars = JSON.parse(tempLocalData);
+if (cars.length) {
   for (let index = 0; index < cars.length; index++) {
     createCarSection(cars[index]);
   }
@@ -112,16 +115,26 @@ if (tempLocalData) {
         (category) => category !== e.target.name
       );
     }
-    // Get data from localStorage
-    const cars = JSON.parse(localStorage.getItem("carList"));
+
     // Filter car data as a allCategories array
-    const filteredCars = cars.filter((car) =>
-      allCategories.includes(car.category)
-    );
+    filteredCars = cars.filter((car) => allCategories.includes(car.category));
 
     // Send data to html
     filteredCars.map((fCar) => createCarSection(fCar));
 
     filteredBox.textContent = filteredCars.length;
+    searchBox.value = "";
   });
+});
+
+// Filter by search
+searchBox.addEventListener("input", (e) => {
+  filteredCars = cars.filter((car) => allCategories.includes(car.category));
+  filteredCars = filteredCars.filter((car) =>
+    car.name.toLowerCase().includes(e.target.value.toLowerCase())
+  );
+
+  listMain.innerHTML = "";
+  filteredCars.map((fCar) => createCarSection(fCar));
+  filteredBox.textContent = filteredCars.length;
 });

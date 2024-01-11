@@ -76,6 +76,11 @@ a.nav-link {
   position: relative;
 }
 
+.info-container{
+  display: flex;
+  justify-content: center;
+}
+
 .filter-section {
   display: flex;
   justify-content: center;
@@ -89,6 +94,13 @@ a.nav-link {
 
 .filter-section input {
   margin-right: 5px;
+}
+
+.search-element{
+  font-size: 17px;
+  background-color: aquamarine;
+  padding: 3px 13px;
+  border-radius: 13px;
 }
 
 .removeButton {
