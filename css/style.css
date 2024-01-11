@@ -144,6 +144,18 @@ a.nav-link {
   justify-content: center;
 }
 
+.clear {
+  margin-top: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: aqua;
+  color: black;
+  min-width: 110px;
+}
+
 .footer-space{
   height: 150px;
 }

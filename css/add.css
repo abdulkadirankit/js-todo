@@ -89,8 +89,8 @@ form select {
   padding: 5px 8px;
 }
 
-.car_submit,
-.car_random {
+.car-submit,
+.car-random {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -98,6 +98,7 @@ form select {
   outline: none;
   background-color: aqua;
   color: black;
+  min-width: 110px;
 }
 /* eind van main */
 

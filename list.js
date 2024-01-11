@@ -4,6 +4,7 @@ const checkBoxElements = document.querySelectorAll(".checkbox");
 const totalBox = document.querySelector(".total");
 const filteredBox = document.querySelector(".filtered");
 const searchBox = document.querySelector(".search-element");
+const clearButton = document.querySelector(".clear");
 
 let cars = [];
 let filteredCars = [];
@@ -79,9 +80,15 @@ function removeButton(e) {
       closestElement.remove();
       cars = cars.filter((item) => item.id !== Number(e.target.id));
       localStorage.setItem("carList", JSON.stringify(cars));
-      totalBox.textContent = cars.length;
+      totalBox.innerHTML = "Total : " + "<b>" + cars.length + "</b>";
       filteredCars = cars.filter((car) => allCategories.includes(car.category));
-      filteredBox.textContent = filteredCars.length;
+      filteredBox.innerHTML =
+        "Showed : " + "<b>" + filteredCars.length + "</b>";
+    }
+    if (cars.length === 0) {
+      totalBox.innerHTML = "";
+      filteredBox.innerHTML = "";
+      listWarning.textContent = "Please add a new car!";
     }
   }
 }
@@ -92,8 +99,9 @@ if (cars.length) {
     createCarSection(cars[index]);
   }
   listWarning.textContent = "";
-  totalBox.textContent = cars.length;
-  filteredBox.textContent = cars.length;
+  totalBox.innerHTML =
+    "Total &nbsp;&nbsp;&nbsp;&nbsp; : " + "<b>" + cars.length + "</b>";
+  filteredBox.innerHTML = "Showed : " + "<b>" + cars.length + "</b>";
 } else {
   listWarning.textContent = "Please add a new car!";
 }
@@ -122,7 +130,7 @@ if (cars.length) {
     // Send data to html
     filteredCars.map((fCar) => createCarSection(fCar));
 
-    filteredBox.textContent = filteredCars.length;
+    filteredBox.innerHTML = "Showed : " + "<b>" + filteredCars.length + "</b>";
     searchBox.value = "";
   });
 });
@@ -136,5 +144,16 @@ searchBox.addEventListener("input", (e) => {
 
   listMain.innerHTML = "";
   filteredCars.map((fCar) => createCarSection(fCar));
-  filteredBox.textContent = filteredCars.length;
+  filteredBox.innerHTML = "Showed : " + "<b>" + filteredCars.length + "</b>";
+});
+
+// Clear all data
+clearButton.addEventListener("click", () => {
+  localStorage.removeItem("carList");
+  cars = [];
+  filteredCars = [];
+  listMain.innerHTML = "";
+  totalBox.innerHTML = "";
+  filteredBox.innerHTML = "";
+  listWarning.textContent = "Please add a new car!";
 });

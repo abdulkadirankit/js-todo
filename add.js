@@ -1,9 +1,9 @@
 const carName = document.querySelector(".car_name");
 const carYear = document.querySelector(".car_year");
 const carCategory = document.querySelector(".car_category");
-const carSubmit = document.querySelector(".car_submit");
+const carSubmit = document.querySelector(".car-submit");
 const carWarning = document.querySelector(".car_warning");
-const carRandom = document.querySelector(".car_random");
+const carRandom = document.querySelector(".car-random");
 
 // Create a new car
 const addCar = (car) => {
