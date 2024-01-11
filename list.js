@@ -99,6 +99,8 @@ if (cars.length) {
     createCarSection(cars[index]);
   }
   listWarning.textContent = "";
+
+  // Add filtered/total count with label
   totalBox.innerHTML =
     "Total &nbsp;&nbsp;&nbsp;&nbsp; : " + "<b>" + cars.length + "</b>";
   filteredBox.innerHTML = "Showed : " + "<b>" + cars.length + "</b>";
@@ -144,6 +146,8 @@ searchBox.addEventListener("input", (e) => {
 
   listMain.innerHTML = "";
   filteredCars.map((fCar) => createCarSection(fCar));
+
+  // Add filtered count with label
   filteredBox.innerHTML = "Showed : " + "<b>" + filteredCars.length + "</b>";
 });
 
